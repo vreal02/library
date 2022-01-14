@@ -10,3 +10,4 @@ db.on('error',console.error.bind(console, 'Fallo conexion BD!!'))
 db.once('open', () =>{
     console.log("Conectado")
 })
+//gfhfgh
