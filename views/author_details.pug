@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  h2 Books writed by #[strong #{authors.first_name + ' ' + authors.family_name}]
+  p= authors.lifespan
+  each val in authors_books
+    a(href=val.url) #{val.title}
+    p #{val.summary}
+
+  else 
+    p This author has no books
+
+  hr
+  p 
+    a(href=author.url + '/delete') Delete Author
