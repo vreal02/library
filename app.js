@@ -11,17 +11,18 @@ var helmet = require('helmet')
 
 require('./db.js')
 
+var app = express();
+
 var indexRouter = require('./routes/index');
 var catalogRouter = require('./routes/catalog');
 
-var app = express();
+app.use(compression())
+app.use(helmet())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(compression())
-app.use(helmet())
 
 app.use(logger('dev'));
 app.use(express.json());
